@@ -1,35 +1,34 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { MotionDiv } from "@/lib/utils";
 import {
-  LineChart,
-  Wallet,
   ArrowRightLeft,
-  Sparkles,
   Bell,
+  LineChart,
   Lock,
+  Sparkles,
+  Wallet,
 } from "lucide-react";
 
 export function Features() {
   return (
     <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl font-bold mb-4">
-              Everything You Need in One Place
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive tools and features to manage your DeFi portfolio
-              effectively
-            </p>
-          </motion.div>
-        </div>
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl font-bold mb-4">
+            Everything You Need in One Place
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Comprehensive tools and features to manage your DeFi portfolio
+            effectively
+          </p>
+        </MotionDiv>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <FeatureCard
@@ -78,7 +77,7 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -91,6 +90,6 @@ function FeatureCard({
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-muted-foreground">{description}</p>
       </Card>
-    </motion.div>
+    </MotionDiv>
   );
 }
